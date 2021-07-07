@@ -1,13 +1,186 @@
-body {
+/*_ || Global styling _*/
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root.light {
+  --bg-color: white;
 }
+
+:root.dark {
+  --bg-color: #282c35;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+/*_ End of global styling _*/
+
+.app-wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* || Toggle button styling */
+.toggle-wrapper {
+  height: 6rem;
+  width: 8rem;
+  position: absolute;
+  top: -2rem;
+  right: 1rem;
+}
+
+.toggle {
+  width: 4rem;
+  height: 2rem;
+  margin: 4rem;
+  background-color: gray;
+  border-radius: 3rem;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sun,
+.moon {
+  font-size: 1.2rem;
+}
+
+.sun {
+  color: yellow;
+}
+
+.circle-light {
+  width: 1.4rem;
+  height: 1.4rem;
+  background-color: lightgray;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.6);
+}
+.circle-dark {
+  width: 1.4rem;
+  height: 1.4rem;
+  background-color: lightgray;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.6);
+}
+
+/* End of toggle button styling */
+
+.navigation-light {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 0.1rem solid black;
+}
+
+.navigation-dark {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 0.1rem solid gray;
+}
+
+.navigation-light ul,
+.navigation-dark ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem 0 2rem;
+}
+
+.navigation-light ul a,
+.navigation-dark ul a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  margin-right: 2rem;
+}
+
+.navigation-light ul a:link,
+.navigation-light ul a:visited {
+  color: black;
+}
+
+.navigation-dark ul a:link,
+.navigation-dark ul a:visited {
+  color: gray;
+}
+
+.navigation-light ul a:hover {
+  color: gray;
+}
+
+.navigation-dark ul a:hover {
+  color: white;
+}
+
+.navigation-light ul a:active,
+.navigation-dark ul a:active {
+  color: lawngreen;
+}
+
+.active {
+  font-weight: 900;
+}
+
+/*_ || Main section styling _*/
+
+.main-light {
+  font-size: 3rem;
+  width: 80%;
+  margin: 0rem auto;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.main-dark {
+  font-size: 3rem;
+  width: 80%;
+  margin: 0rem auto;
+  padding: 1rem;
+  font-weight: bold;
+  color: gray;
+}
+
+/*_ End of main section styling _*/
+
+/*_ || Footer section styling _*/
+
+.footer-light {
+  width: 100%;
+  height: 4rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+}
+
+.footer-dark {
+  width: 100%;
+  height: 4rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  color: gray;
+}
+
+/*_ || End of footer section styling _*/
