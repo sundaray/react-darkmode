@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../App";
+import Toggle from "./Toggle";
 
 const Navbar = () => {
-  const darkMode = useContext(ThemeContext);
+  const { darkMode } = useContext(ThemeContext);
 
   return (
     <nav className={darkMode ? "navigation-dark" : "navigation-light"}>
@@ -18,6 +19,7 @@ const Navbar = () => {
           Blog
         </NavLink>
       </ul>
+      <Toggle />
     </nav>
   );
 };
